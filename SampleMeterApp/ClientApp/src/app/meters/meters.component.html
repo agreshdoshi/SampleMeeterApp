@@ -1,0 +1,29 @@
+<h1>Meter</h1>
+
+<p *ngIf="!meters"><em>Loading...</em></p>
+
+<table class="table table-striped" *ngIf="meters">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Meter Code</th>
+      <th scope="col">Date</th>
+      <th scope="col">Data Type</th>
+      <th scope="col">Minimum Value</th>
+      <th scope="col">Maximum Value</th>
+      <th scope="col">Median Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let meter of meters">
+      <td>{{ meter.id }}</td>
+      <td>{{ meter.meterCode }}</td>
+      <td>{{ meter.date }}</td>
+      <td>{{ meter.dataType }}</td>
+      <td>{{ meter.minimumValue |currency }}</td>
+      <td>{{ meter.maximumValue |currency }}</td>
+      <td>{{ meter.medianValue |currency}}</td>
+    </tr>
+  </tbody>
+</table>
+
